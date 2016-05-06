@@ -33,3 +33,7 @@ bower.json
 
 # Ignore pow environment settings
 .powenv
+/config/database.yml
+/config/app_config.yml
+.*.sw*
+.DS_Store
