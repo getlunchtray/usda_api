@@ -6,7 +6,7 @@ class ImportRelease
     return "Release Already Exists" if Release.find_by(version: version)
     connection = ActiveRecord::Base.connection
     connection.tables.each do |table|
-      connection.execute("TRUNCATE #{table}") unless table == "schema_migrations"
+      connection.execute("TRUNCATE #{table}") unless table == "schema_migrations" || table == "releases"
     end
 
     sql = File.read(latest)
