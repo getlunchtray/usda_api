@@ -1,0 +1,20 @@
+common: &common
+  adapter: postgresql
+
+development:
+  adapter: postgresql
+  username: postgres
+  password: password
+  database: usda_development
+
+production:
+  adapter: postgresql
+  username: postgres
+  password: password
+  database: usda_production
+
+test:
+  adapter: postgresql
+  username: postgres
+  password: password
+  database: usda_test
