@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160506163907) do
+ActiveRecord::Schema.define(version: 20160506183020) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,6 +30,8 @@ ActiveRecord::Schema.define(version: 20160506163907) do
     t.text     "Status"
   end
 
+  add_index "buygd", ["Buying_Guide_Code"], name: "index_buygd_on_Buying_Guide_Code", using: :btree
+
   create_table "bygdlnk", force: :cascade do |t|
     t.integer  "CN_Code"
     t.integer  "Buying_Guide_Code"
@@ -38,6 +40,9 @@ ActiveRecord::Schema.define(version: 20160506163907) do
     t.text     "status"
   end
 
+  add_index "bygdlnk", ["Buying_Guide_Code"], name: "index_bygdlnk_on_Buying_Guide_Code", using: :btree
+  add_index "bygdlnk", ["CN_Code"], name: "index_bygdlnk_on_CN_Code", using: :btree
+
   create_table "ctgnme", force: :cascade do |t|
     t.integer  "Food_Category_Code"
     t.text     "Category_Description"
@@ -45,6 +50,8 @@ ActiveRecord::Schema.define(version: 20160506163907) do
     t.datetime "Last_modified"
     t.text     "Status"
   end
+
+  add_index "ctgnme", ["Food_Category_Code"], name: "index_ctgnme_on_Food_Category_Code", using: :btree
 
   create_table "fdes", force: :cascade do |t|
     t.integer  "Food_Category_Code"
@@ -61,6 +68,9 @@ ActiveRecord::Schema.define(version: 20160506163907) do
     t.text     "Form_of_Food"
   end
 
+  add_index "fdes", ["CN_Code"], name: "index_fdes_on_CN_Code", using: :btree
+  add_index "fdes", ["Food_Category_Code"], name: "index_fdes_on_Food_Category_Code", using: :btree
+
   create_table "nutdes", force: :cascade do |t|
     t.integer  "Nutrient_Code"
     t.text     "Nutrient_Description"
@@ -71,6 +81,8 @@ ActiveRecord::Schema.define(version: 20160506163907) do
     t.text     "Status"
   end
 
+  add_index "nutdes", ["Nutrient_Code"], name: "index_nutdes_on_Nutrient_Code", using: :btree
+
   create_table "nutval", force: :cascade do |t|
     t.integer  "CN_Code"
     t.integer  "Nutrient_Code"
@@ -80,6 +92,9 @@ ActiveRecord::Schema.define(version: 20160506163907) do
     t.datetime "Last_modified"
     t.text     "Status"
   end
+
+  add_index "nutval", ["CN_Code"], name: "index_nutval_on_CN_Code", using: :btree
+  add_index "nutval", ["Nutrient_Code"], name: "index_nutval_on_Nutrient_Code", using: :btree
 
   create_table "releases", force: :cascade do |t|
     t.string   "version"
@@ -97,5 +112,7 @@ ActiveRecord::Schema.define(version: 20160506163907) do
     t.datetime "Last_modified"
     t.text     "Status"
   end
+
+  add_index "wght", ["CN_Code"], name: "index_wght_on_CN_Code", using: :btree
 
 end
