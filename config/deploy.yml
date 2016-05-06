@@ -12,4 +12,4 @@ production:
       <<: *common
       domain: 104.131.29.227
       user: sitedeploy 
-      branch: production
+      branch: master 
