@@ -42,7 +42,6 @@ task :deploy => :environment do
     invoke :'bundle:install'
     #queue! "RAILS_ENV=#{rails_env} bundle exec rake db:create"
     invoke :'rails:db_migrate'
-    invoke :'rails:assets_precompile'
     invoke :'deploy:cleanup'
     invoke :'seed'
 
