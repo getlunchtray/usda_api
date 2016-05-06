@@ -44,6 +44,7 @@ task :deploy => :environment do
     invoke :'rails:db_migrate'
     invoke :'deploy:cleanup'
     invoke :'seed'
+    queue! "RAILS_ENV=#{rails_env} bundle exec rake import_release:start"
 
     to :launch do
       queue "mkdir -p #{deploy_to}/#{current_path}/tmp/"
