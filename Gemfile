@@ -13,6 +13,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'mina'
 gem 'mina-config', require: false
 
+gem 'rocket_pants'
+gem 'devise'
+
 group :development, :test do
   gem 'pry'
 end

@@ -3,6 +3,7 @@ class Buygd < ActiveRecord::Base
 
   has_many :bygdlnks, foreign_key: "Buying_Guide_Code", primary_key: "Buying_Guide_Code"
   has_many :nutvals, through: :bygdlnks
+  has_many :nutdes, through: :nutvals
   has_many :fdes, through: :bygdlnks
   has_many :wghts, through: :bygdlnks
 end
