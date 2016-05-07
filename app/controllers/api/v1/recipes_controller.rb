@@ -28,6 +28,6 @@ class Api::V1::RecipesController < Api::V1::BaseController
       end
     end
     
-    expose response
+    expose {recipes: response}
   end
 end
