@@ -1,6 +1,6 @@
 class Api::V1::RecipesController < Api::V1::BaseController 
   def index
-    response = [] 
+    response = {recipes: []} 
     Bygdlnk.limit(25).order(CN_Code: :desc).includes(:fdes, :ctgnme, :nutvals, :nutdes, :buygd, :wghts).each do |link|
 
       link.wghts.each do |weight|
@@ -24,10 +24,10 @@ class Api::V1::RecipesController < Api::V1::BaseController
           response_hash[nutval.nutdes.Nutrient_Description] = value
         end
 
-        response << response_hash
+        response[:recipes] << response_hash
       end
     end
     
-    expose {recipes: response}
+    expose response
   end
 end
