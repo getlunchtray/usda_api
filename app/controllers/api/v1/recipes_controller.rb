@@ -1,7 +1,10 @@
 class Api::V1::RecipesController < Api::V1::BaseController 
   def index
     response = {recipes: []} 
-    Bygdlnk.limit(25).order(CN_Code: :desc).includes(:fdes, :ctgnme, :nutvals, :nutdes, :buygd, :wghts).each do |link|
+    params[:page] ||= 0
+    params[:per_page] ||= 25
+    offset = params[:page].to_i * params[:per_page].to_i
+    Bygdlnk.limit(params[:per_page].to_i).offset(offset).order(CN_Code: :desc).includes(:fdes, :ctgnme, :nutvals, :nutdes, :buygd, :wghts).each do |link|
 
       link.wghts.each do |weight|
         response_hash = {
