@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     api version: 1, module: 'v1' do
       resources :sessions, only: [:create]
       resources :recipes
+      resources :releases
     end
   end
 end
