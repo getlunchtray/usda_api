@@ -6,7 +6,7 @@ class ImportRelease
     return "Release Already Exists" if Release.find_by(version: version)
     connection = ActiveRecord::Base.connection
     connection.tables.each do |table|
-      connection.execute("TRUNCATE #{table}") unless table == "schema_migrations" || table == "releases"
+      connection.execute("TRUNCATE #{table}") unless table == "schema_migrations" || table == "releases" || table == "users"
     end
 
     sql = File.read(latest)
@@ -30,6 +30,7 @@ class ImportRelease
         connection.execute(rails_clean_statement)
       end
       Release.create(version: version)
+      Fdes.where("\"Descriptor\" LIKE ?", "Alcoholic beverage%").destroy_all
     end
   end 
 end
