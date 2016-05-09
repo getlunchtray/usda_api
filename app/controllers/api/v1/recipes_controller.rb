@@ -1,6 +1,6 @@
 class Api::V1::RecipesController < Api::V1::BaseController 
   def index
-    response = {recipes: []} 
+    response = {recipes: [], release: Release.first.version} 
     offset = params[:page].to_i * params[:per_page].to_i
     if offset > Fdes.count
       response[:end_of_results] = true 
