@@ -71,6 +71,12 @@ Now for the good stuff.
 
 `per_page` *Default: 25*
 
+**A quick gotcha**
+
+You'll likely have more results than just the 25 requested (assuming the default). This is because you're requesting 25 **recipes** but recipes are pretty futile if you don't also have the weights. So if you have 3 weights for each recipe, you're actually going to get 75 results, but still 25 recipes. For this reason, the id we return in the response is a combination of the CND ID and the weight (separated by a hyphen). To get the true CND ID, that's under "cnd_code".
+
+There are better ways to handle this and it will most likely be updated in the 2nd version, but it's not a priority at the moment. 
+
 ## Forking
 This is far from complete and would love any extra code you'd like to add :)
 
