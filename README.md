@@ -23,10 +23,18 @@ Devise is used for user authentication. From the rails console, run:
 
 All of those fields are required, since the system is read-only from the API, no roles are necessary. 
 
-### Obtaining an authentication key
+### Obtaining an authentication token
 
 One session is permitted per user at a time. To sign in:
 
 `POST: /api/1/sessions?user[email]=email@example.com&user[password]=password`
 
-As you can tell, this isn't very secure. Session keys will be moving to the headers instead of route params very very soon.
+This will return:
+
+```
+{
+  user_id: 1,
+  token: s0m3hAShk3yliKethis
+}
+```
+*As you can tell, this isn't very secure. Session keys will be moving to the headers instead of route params very very soon.*
