@@ -3,7 +3,7 @@ The USDA Child Nutrition Database (CND) can be a difficult thing to navigate esp
 
 Currently using CN20-7 database. Repo will be updated to CN21 once made available by the USDA.
 
-*Full Documentation coming soon*
+As far as the names of the tables and fields, they're a direct copy from the CND. Despite despising every naming decision in this database, I think this makes the most sense for transfering information correctly from the USDA. However, for the most part, this uses a different naming structure for the API itself. 
 
 ## Setup
 
