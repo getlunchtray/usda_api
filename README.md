@@ -38,3 +38,29 @@ This will return:
 }
 ```
 *As you can tell, this isn't very secure. Session keys will be moving to the headers instead of route params very very soon.*
+
+### Reading the Recipes
+Now for the good stuff.
+
+`GET: /api/1/recipes`
+
+**Options (All optional)**
+
+`page` *Default: 0*
+`per_page` *Default: 25*
+
+## Forking
+This is far from complete and would love any extra code you'd like to add :)
+
+For LunchTray's purposes, we were only concerned with the Recipes. The good news, the Import jobs adds everything to your Rails DB. So adding other controllers literally only requires adding the controllers. The models should be good to go.
+
+## To-Do List
+1. Move login info to the headers
+2. Add Rspec Tests
+3. A bunch of refactoring
+4. Add controllers for other models
+5. Add interface for managing users
+
+## Hosted Version
+
+LunchTray hosts our own version of this. If you would like to use that instead of self-hosting email me: noah (at) getlunchtray (dot) com and I'm sure we can work something out. 
