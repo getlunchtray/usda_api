@@ -5,7 +5,7 @@ Currently using CN20-7 database. Repo will be updated to CN21 once made availabl
 
 *Full Documentation coming soon*
 
-## Usage
+## Setup
 
 ### Import CND
 
@@ -23,6 +23,8 @@ Devise is used for user authentication. From the rails console, run:
 
 All of those fields are required, since the system is read-only from the API, no roles are necessary. 
 
+## Documentation
+
 ### Obtaining an authentication token
 
 One session is permitted per user at a time. To sign in:
@@ -39,6 +41,25 @@ This will return:
 ```
 *As you can tell, this isn't very secure. Session keys will be moving to the headers instead of route params very very soon.*
 
+### Authenticating Requests
+
+On each request, pass an 'Authentication' header with your token and user_id. Here's an example if you're using HTTParty in another Ruby project. 
+
+```
+class YourApiClass
+  include HTTParty
+  base_uri "https://api.example.com"
+  
+  def get_recipes
+    token = "my_token"
+    user_id = 1
+    self.class.get("/api/1/recipes", query: query, headers: {"Authorization" => "Token token=\"#{token}\", user_id=\"#{user_id}\""})
+  end
+end
+```
+
+You are, of course, free to use whatever you want to make this request. 
+
 ### Reading the Recipes
 Now for the good stuff.
 
@@ -47,6 +68,7 @@ Now for the good stuff.
 **Options (All optional)**
 
 `page` *Default: 0*
+
 `per_page` *Default: 25*
 
 ## Forking
