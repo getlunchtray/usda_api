@@ -1,0 +1,14 @@
+#Replace these with actual values
+common: &common
+      app: usda_api 
+      repository: YOUR_REPO 
+      shared_paths:
+            - 'config/database.yml'
+            - 'log'
+            - 'config/secrets.yml'
+            - 'public/system'
+production:
+      <<: *common
+      domain: SERVER_IP_ADDRESS 
+      user: DEPLOY_USER 
+      branch: DEPLOY_BRANCH 
