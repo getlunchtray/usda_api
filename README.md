@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/getlunchtray/usda_api.svg?branch=master)](https://travis-ci.org/getlunchtray/usda_api)
+[![Build Status](https://travis-ci.org/getlunchtray/usda_api.svg?branch=master)](https://travis-ci.org/getlunchtray/usda_api) [![Code Climate](https://codeclimate.com/github/getlunchtray/usda_api/badges/gpa.svg)](https://codeclimate.com/github/getlunchtray/usda_api)
 # API for USDA Child Nutrition Database
 The USDA Child Nutrition Database (CND) can be a difficult thing to navigate especially if you're not using Access. This provides a self hosted method of getting information from the database through a simple API.
 
