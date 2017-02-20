@@ -16,6 +16,11 @@ gem 'mina-config', require: false
 gem 'rocket_pants'
 gem 'devise'
 
+group :test do 
+  gem 'simplecov', require: false
+end
+
 group :development, :test do
   gem 'pry'
+  gem 'rspec-rails', '~> 3.5'
 end
