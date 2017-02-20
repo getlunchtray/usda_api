@@ -28,19 +28,7 @@ All of those fields are required, since the system is read-only from the API, no
 
 ### Obtaining an authentication token
 
-One session is permitted per user at a time. To sign in:
-
-`POST: /api/1/sessions?user[email]=email@example.com&user[password]=password`
-
-This will return:
-
-```
-{
-  user_id: 1,
-  token: s0m3hAShk3yliKethis
-}
-```
-*As you can tell, this isn't very secure. Session keys will be moving to the headers instead of route params very very soon.*
+`User.find_by(email: "email@example.com").generate_authentication_token`
 
 ### Authenticating Requests
 

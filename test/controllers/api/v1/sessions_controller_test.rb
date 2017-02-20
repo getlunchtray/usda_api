@@ -1,7 +1,5 @@
-require 'test_helper'
+require 'spec_helper'
 
-class Api::V1::SessionsControllerTest < ActionController::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+RSpec.describe "SessionsController" do
+  
 end
