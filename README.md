@@ -80,4 +80,4 @@ For LunchTray's purposes, we were only concerned with the Recipes. The good news
 
 ## Hosted Version
 
-LunchTray hosts our own version of this. If you would like to use that instead of self-hosting email me: noah (at) getlunchtray (dot) com and I'm sure we can work something out. 
+LunchTray hosts our own version of this. If you would like to use that instead of self-hosting, email me: noah (at) getlunchtray (dot) com and I'm sure we can work something out. 
