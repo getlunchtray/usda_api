@@ -10,9 +10,9 @@ As far as the names of the tables and fields, they're a direct copy from the CND
 
 ### Import CND
 
-A SQL version of the CND is located in vendor/releases. A class is available to import all of the data into their respective tables. 
+A SQL version of the CND is located in vendor/releases. A task is available to import all of the data into their respective tables. 
 
-`ImportRelease.perform`
+`rake import_release:start`
 
 *Note: the CND does include alcoholic beverages. By default, the import class will destroy those items. An option will eventually be available to toggle that functionality*
 
@@ -72,11 +72,10 @@ This is far from complete and would love any extra code you'd like to add :)
 For LunchTray's purposes, we were only concerned with the Recipes. The good news, the Import jobs adds everything to your Rails DB. So adding other controllers literally only requires adding the controllers. The models should be good to go.
 
 ## To-Do List
-1. Move login info to the headers
-2. Add Rspec Tests
-3. A bunch of refactoring
-4. Add controllers for other models
-5. Add interface for managing users
+1. Add Rspec Tests
+2. A bunch of refactoring
+3. Add controllers for other models
+4. Add interface for managing users
 
 ## Hosted Version
 
