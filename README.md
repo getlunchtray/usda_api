@@ -56,15 +56,12 @@ Now for the good stuff.
 
 **Options (All optional)**
 
-`page` *Default: 0*
+`page` *Default: 1*
+*Notice this is NOT zero based paging*
 
 `per_page` *Default: 25*
 
-**A quick gotcha**
-
-You'll likely have more results than just the 25 requested (assuming the default). This is because you're requesting 25 **recipes** but recipes are pretty futile if you don't also have the weights. So if you have 3 weights for each recipe, you're actually going to get 75 results, but still 25 recipes. For this reason, the id we return in the response is a combination of the CND ID and the weight (separated by a hyphen). To get the true CND ID, that's under "cnd_code".
-
-There are better ways to handle this and it will most likely be updated in the 2nd version, but it's not a priority at the moment. 
+Each recipe will include the respective weights. Each weight will include nutrient values which are pre converted based on their weight.
 
 ## Forking
 This is far from complete and would love any extra code you'd like to add :)
@@ -72,10 +69,9 @@ This is far from complete and would love any extra code you'd like to add :)
 For LunchTray's purposes, we were only concerned with the Recipes. The good news, the Import jobs adds everything to your Rails DB. So adding other controllers literally only requires adding the controllers. The models should be good to go.
 
 ## To-Do List
-1. Add Rspec Tests
-2. A bunch of refactoring
-3. Add controllers for other models
-4. Add interface for managing users
+1. Add Rspec Tests to the DB importer
+2. Add controllers for other models
+3. Add interface for managing users
 
 ## Hosted Version
 
