@@ -1,17 +1,18 @@
 require 'simplecov'
+require 'json_helpers'
 SimpleCov.start
 
 RSpec.configure do |config|
   config.include FactoryGirl::Syntax::Methods
+  config.include JsonHelpers
+
   config.expect_with :rspec do |expectations|
     expectations.include_chain_clauses_in_custom_matcher_descriptions = true
   end
 
   config.before(:suite) do
-    unless Release.first
-      puts "Importing Release\n This will only run if it's your first time. It may take a minute or two."
-      ImportRelease.perform
-    end
+    puts "Importing latest release. It may take a minute or two if a new release exists."
+    ImportRelease.perform
   end
 
   config.mock_with :rspec do |mocks|

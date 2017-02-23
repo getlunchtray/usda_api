@@ -1,7 +1,7 @@
 class ImportRelease
   def self.perform
     path = Rails.root.join("vendor", "releases")
-    latest = Dir.glob(File.join(path, '*.*')).max { |a,b| File.ctime(a) <=> File.ctime(b) }
+    latest = Dir.glob(File.join(path, '*.sql')).sort.max
     version = latest.match(/CN(.+).sql/)[1]
     return "Release Already Exists" if Release.find_by(version: version)
     connection = ActiveRecord::Base.connection
