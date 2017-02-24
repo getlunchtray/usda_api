@@ -69,9 +69,8 @@ This is far from complete and would love any extra code you'd like to add :)
 For LunchTray's purposes, we were only concerned with the Recipes. The good news, the Import jobs adds everything to your Rails DB. So adding other controllers literally only requires adding the controllers. The models should be good to go.
 
 ## To-Do List
-1. Add Rspec Tests to the DB importer
-2. Add controllers for other models
-3. Add interface for managing users
+1. Add controllers for other models
+2. Add interface for managing users
 
 ## Hosted Version
 
