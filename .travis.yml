@@ -1,0 +1,7 @@
+language: ruby
+rvm:
+  - 2.1.6
+services:
+  - postgresql
+before_script:
+  - psql -c 'create database usda_test;' -U postgres
