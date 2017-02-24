@@ -12,7 +12,7 @@ RSpec.configure do |config|
 
   config.before(:suite) do
     puts "Importing latest release. It may take a minute or two if a new release exists."
-    ImportRelease.perform
+    ImportRelease.new.perform
   end
 
   config.mock_with :rspec do |mocks|
